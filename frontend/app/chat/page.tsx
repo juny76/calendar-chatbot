@@ -12,7 +12,7 @@ export default function Chat() {
     const { status, data: session } = useSession();
 
     const [messages, setMessages] = useState([
-        { user: "User2", text: "Hi! My name is Calvin, your Google Calendar Assistant. What can I help you with?", color: "green" },
+        { user: "User2", text: "Hi! My name is Shinkou, your Google Calendar Assistant. What can I help you with?", color: "green" },
     ]);
 
     const [current_calendar, setCurrentCalendar] = useState('primary');
