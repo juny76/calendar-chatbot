@@ -9,3 +9,9 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     answer: str
+
+
+class FullChatRequest(BaseModel):
+    user_email: str
+    user_message: str
+    cname: str

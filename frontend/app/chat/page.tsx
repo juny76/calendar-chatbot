@@ -7,12 +7,13 @@ import CalendarDropdown from '../components/calendar-dropdown';
 import { useSession } from "next-auth/react";
 import { fetchCalendarList, sendChatMessage } from './CalendarUtils';
 import { ThreeDots } from 'react-loader-spinner';
+import Sidebar from "@/app/components/Sidebar";
 
 export default function Chat() {
     const { status, data: session } = useSession();
 
     const [messages, setMessages] = useState([
-        { user: "User2", text: "Hi! My name is Shinkou, your Google Calendar Assistant. What can I help you with?", color: "green" },
+        { user: "User2", text: "Hi! My name is Shinkou, your Schedule Assistant. What can I help you with?", color: "green" },
     ]);
 
     const [current_calendar, setCurrentCalendar] = useState('primary');
@@ -120,10 +121,11 @@ export default function Chat() {
 
     return (
         <div className="flex flex-col h-screen">
+
             <header className="flex justify-between items-center p-4 bg-gray-800 text-white flex-shrink-0">
                 <div className="flex items-center">
                     <CalendarIcon className="h-8 w-8 text-white" />
-                    <h1 className="ml-2 text-2xl">Google Calendar Assistant</h1>
+                    <h1 className="ml-2 text-2xl">Schedule Assistant</h1>
                 </div>
                 <div className="flex items-center p-4">
                     <CalendarDropdown
@@ -134,7 +136,7 @@ export default function Chat() {
                     <SignInButton />
                 </div>
             </header>
-
+             {/*<Sidebar/>*/}
             <main className="flex-1 flex flex-col overflow-hidden container mx-auto px-4">
                 <div className="flex-1 p:2 sm:p-6 justify-between flex flex-col h-80 bg-white">
                     <div id="messages" ref={messagesEndRef} className="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch">

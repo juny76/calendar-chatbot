@@ -6,7 +6,7 @@ import { NextAuthProvider } from './providers';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'GCal Assistant',
+  title: 'Schedule Assistant',
   description: 'Google Calendar assistant powered by Langchain',
 }
 
