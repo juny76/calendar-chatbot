@@ -10,7 +10,7 @@ interface Props {
 
 const CalendarDropdown: React.FC<Props> = ({ calendarIds, onCalendarChange, loading }) => {
     // Assume the first calendar ID is the default selected value
-    const [selectedCalendar, setSelectedCalendar] = useState<string>(calendarIds[0]);
+    const [selectedCalendar, setSelectedCalendar] = useState<string>(calendarIds[1]);
 
     useEffect(() => {
         onCalendarChange(selectedCalendar);

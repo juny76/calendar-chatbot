@@ -27,3 +27,39 @@
     background: #F3F4F6;
 }
 }
+
+/* styles/globals.css */
+.chat-container {
+  display: flex;
+}
+
+main {
+  flex: 1; /* Phần chat sẽ mở rộng để lấp đầy phần còn trống của không gian */
+}
+.sidebar {
+  width: 200px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.conversation-list {
+  margin-bottom: 20px;
+}
+
+.conversation {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-chat-button,
+.upload-button {
+  margin-bottom: 10px;
+}
+

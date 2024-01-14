@@ -6,7 +6,7 @@ from backend.routers import (
     calendar_routes,
     event_routes,
     chat_routes,
-    health_routes,
+    health_routes, file_routes,
 )
 
 
@@ -27,3 +27,4 @@ app.include_router(calendar_routes.router, prefix="/calendars", tags=["items"])
 app.include_router(event_routes.router, prefix="/events", tags=["events"])
 app.include_router(health_routes.router, prefix="/health", tags=["health", "ready"])
 app.include_router(chat_routes.router, prefix="/chat", tags=["chat"])
+app.include_router(file_routes.router, prefix="/file")
