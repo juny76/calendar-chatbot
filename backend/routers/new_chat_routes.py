@@ -4,7 +4,7 @@ from fastapi import APIRouter, HTTPException
 from datetime import datetime
 from backend.dependencies import get_db
 from backend.models.chat import FullChatRequest
-from backend.usecases import run_agent_executor
+from backend.llm_agent import run_agent_executor
 from backend.models import ChatRequest, ChatResponse
 
 router = APIRouter()

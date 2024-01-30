@@ -15,5 +15,4 @@ fs = GridFS(db)
 @router.post("/uploadfile/")
 async def create_upload_file(file: UploadFile = File(...)):
     file_id = fs.put(file.file, filename=file.filename, content_type=file.content_type)
-    # Trả về thông tin về file đã tải lên
     return JSONResponse(content={"filename": file.filename, "file_id": str(file_id)})
