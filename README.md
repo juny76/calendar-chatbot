@@ -9,6 +9,7 @@ A Chatbot supports schedule management from google calendar
 ### Backend
 - Python 11
 - FAST Api
+- Mongo DB
 - AZURE Open AI API
 - Google Apis
 ### Frontend
