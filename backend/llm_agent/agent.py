@@ -8,7 +8,7 @@ from langchain.tools.render import format_tool_to_openai_function
 from langchain.agents.format_scratchpad import format_to_openai_function_messages
 from langchain.agents.output_parsers import OpenAIFunctionsAgentOutputParser
 
-from backend.usecases import (
+from backend.llm_agent import (
     GetCalendarEventsTool,
     TimeDeltaTool,
     CreateCalendarEventTool,
@@ -17,15 +17,14 @@ from backend.usecases import (
 )
 
 
-OPEN_API_KEY = "01996b13c3d44a149d98031a1327715d"
-OPENAI_MODEL = "GPT35TURBO"
+
 
 def run_agent_executor(user_email: str, user_input: str, calendar_id: str):
     # Options
     llm = AzureChatOpenAI(temperature=0, model="GPT35TURBO",
-                azure_endpoint="https://sunhackathon1.openai.azure.com/",
-                api_version = "2023-07-01-preview",
-                api_key="01996b13c3d44a149d98031a1327715d")
+                azure_endpoint=os.getenv("AZURE_ENDPOINT"),
+                api_version = os.getenv("API_VERSION"),
+                api_key=os.getenv("API_KEY"))
     tools = [
         TimeDeltaTool(),
         GetCalendarEventsTool(),

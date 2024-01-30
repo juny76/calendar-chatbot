@@ -2,16 +2,13 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import time
 import logging
+import os
 
 
 def connect_to_mongo():
-
-
-    mongodb_uri = "mongodb+srv://juny76:tuan762003@cluster0.q4mt3pd.mongodb.net/?retryWrites=true&w=majority"
-
-    client = MongoClient(mongodb_uri, server_api=ServerApi('1'))
+    db_client = MongoClient(os.getenv("MONGODB_URI"), server_api=ServerApi('1'))
     try:
-        return client
+        return db_client
     except Exception as err:
         print(f"Could not connect to MongoDB: {err}")
         return None
@@ -32,4 +29,4 @@ if not client:
 
 print("Connected to MongoDB successfully.")
 
-db = client.get_database("calendar")
+db = client.get_database(os.getenv("DB_NAME"))

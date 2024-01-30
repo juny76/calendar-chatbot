@@ -2,7 +2,7 @@ from typing import Type, Optional
 from datetime import datetime, timedelta
 from pydantic import BaseModel, Field
 from langchain.tools import BaseTool
-from backend.usecases import get_calendar_events, create_event, delete_event
+from backend.llm_agent import get_calendar_events, create_event, delete_event
 
 
 class CalendarEventSearchInput(BaseModel):

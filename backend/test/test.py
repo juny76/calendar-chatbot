@@ -1,5 +1,5 @@
 from backend.models import ChatRequest, ChatResponse
-from backend.usecases import run_agent_executor
+from backend.llm_agent import run_agent_executor
 
 
 chat_request: ChatRequest

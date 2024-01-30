@@ -9,8 +9,8 @@ const scopes = [
 ].join(' ');
 const NEXTAUTH_URL="http://localhost:3000"
 const NEXTAUTH_SECRET="youreawizardharry"
-const GOOGLE_CLIENT_ID="153638901952-7vr981ro03265b8e3jbelj3prc2tani7.apps.googleusercontent.com"
-const GOOGLE_CLIENT_SECRET="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"
+const GOOGLE_CLIENT_ID=""
+const GOOGLE_CLIENT_SECRET=""
 // Get URL from environment and alert if unset
 const BASE_URL = "http://127.0.0.1:8000";
 export const authOptions = {
