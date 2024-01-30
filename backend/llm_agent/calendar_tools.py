@@ -97,6 +97,10 @@ Useful when you want to get a future time in an RFC3339 timestamp, given a time 
         delta_minutes: int = 0,
         delta_seconds: int = 0,
     ):
+        if delta_days is None: delta_days = 0
+        if delta_hours is None: delta_hours = 0
+        if delta_minutes is None: delta_minutes = 0
+        if delta_seconds is None: delta_seconds = 0
         # Return the current time in a format google calendar api can understand
         return (
             datetime.utcnow()
@@ -142,10 +146,10 @@ class CalendarCreateInput(BaseModel):
     calendar_id: str = Field(description="calendar id of the calendar")
     event_name: str = Field(description="name of the event")
     start_datetime: str = Field(
-        description="Start datetime of the event to create. Must be an RFC3339 timestamp, no need for timezone for example, 2011-06-03T10:00:00-07:00, 2011-06-03 "
+        description="Start datetime of the event to create. Must be an RFC3339 timestamp, need for timezone for example, 2011-06-03T10:00:00+07:00, 2011-06-03 "
     )
     end_datetime: str = Field(
-        description="End datetime of the event to create. Must be an RFC3339 timestamp, no need for timezone for example, 2011-06-03T10:00:00-07:00, 2011-06-03"
+        description="End datetime of the event to create. Must be an RFC3339 timestamp,need for timezone for example, 2011-06-03T10:00:00+07:00, 2011-06-03"
     )
 
 

@@ -37,12 +37,14 @@ def get_calendar_events(
         for event in events.get("items", []):
             start = event.get("start")
             date_info = start.get("date", start.get("dateTime"))
+            end = event.get("end")
+            end_info = end.get("date", end.get("dateTime"))
             if return_event_ids:
                 event_list.append(
-                    f"{event.get('summary')}: {date_info} (event ID: {event.get('id')})"
+                    f"{event.get('summary')}:from {date_info} to {end_info} (event ID: {event.get('id')})"
                 )
             else:
-                event_list.append(f"{event.get('summary')}: {date_info}")
+                event_list.append(f"{event.get('summary')}:from {date_info} to {end_info}")
 
     return event_list
 
@@ -95,7 +97,7 @@ def create_event(user_email, calendar_id, event_name, start_datetime, end_dateti
             "summary": event_name,
             "start": {
                 "dateTime": start_datetime,
-                "timeZone": timezone,  # Replace with your time zone, e.g., "America/New_York"
+                "timeZone": timezone,  # Replace with your time zone, e.g.,
             },
             "end": {
                 "dateTime": end_datetime,
